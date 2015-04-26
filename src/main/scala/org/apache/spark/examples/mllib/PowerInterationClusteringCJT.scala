@@ -52,7 +52,7 @@ object PowerIterationClusteringCJT {
       opt[Int]("maxIterations")
         .text(s"number of iterations, default: ${defaultParams.maxIterations}")
         .action((x, c) => c.copy(maxIterations = x))
-      opt[String]("<input>")
+      opt[String]("input")
         .required()
         .text(s"input file, one row per line, space-separated")
         .action((x, c) => c.copy(input = x))
@@ -67,7 +67,7 @@ object PowerIterationClusteringCJT {
 
   def run(params: Params) {
     val conf = new SparkConf()
-      .setMaster("local")
+//      .setMaster("local")
       .setAppName(s"PowerIterationClustering with $params")
     val sc = new SparkContext(conf)
 
