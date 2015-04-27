@@ -54,7 +54,7 @@ object PowerIterationClusteringCJT {
         .action((x, c) => c.copy(maxIterations = x))
       opt[String]("input")
         .required()
-        .text(s"input file, one row per line, space-separated")
+        .text(s"input file, one row per line")
         .action((x, c) => c.copy(input = x))
     }
 
